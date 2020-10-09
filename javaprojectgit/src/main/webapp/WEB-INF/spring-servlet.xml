@@ -9,8 +9,7 @@
       		<property name = "prefix" value="/WEB-INF/views/"></property>
       		<property name = "suffix" value=".jsp"></property>
    		</bean>
-   		<bean id="UserModel" class="model.UserModel">
-   		</bean>
-   		<bean id="UserService" class="services.UserService">
+
+   		<bean id="userService" class="javaprojectgit.services.UserService">
    		</bean>
          </beans>

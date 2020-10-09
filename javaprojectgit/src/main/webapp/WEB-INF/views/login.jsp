@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" isELIgnored="false" %>
+  <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +8,10 @@
 <title>Login</title>
 </head>
 <body>
+
 <%=request.getAttribute("message") %>
+
+
 <form action="loginSubmit">
 <label> Username</label>
 <input type="text" name="userName">
