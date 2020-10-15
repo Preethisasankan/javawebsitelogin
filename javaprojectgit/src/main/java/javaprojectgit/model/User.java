@@ -1,10 +1,14 @@
 package javaprojectgit.model;
 
+
+
 public class User {
 	public Integer id;
 	public String username;
 	public String password;
 	public String name;
+	public Integer roleId;
+
 	public String getName() {
 		return name;
 	}
@@ -29,5 +33,10 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+	public Integer getRoleId() {
+		return roleId;
+	}
+	public void setRoleId(Integer roleId) {
+		this.roleId = roleId;
+	}
 }

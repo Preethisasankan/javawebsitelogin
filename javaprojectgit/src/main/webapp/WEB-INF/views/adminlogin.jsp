@@ -12,13 +12,12 @@
 
 
 <h1> Login </h1>
-<p class="error">${error}</p>
-<form action="loginSubmit" method="post">
+<p class="error">${message}</p>
+<form action="adminloginsubmit" method="post">
 <p><label> Username</label>
 <input type="email" name="userName"></p>
 <p><label> Password</label>
 <input type="password" name="userPassword"></p>
-
 <input type="submit" name="login">
 </form>
 </body>
