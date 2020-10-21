@@ -4,9 +4,14 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Dashboard</title>
 </head>
 <body>
-Welcome <%=request.getAttribute("Name")%>
+Welcome Admin,
+<nav>
+<ul>
+<li><a href="../user/">User</a></li>
+</ul>
+</nav>
 </body>
 </html>

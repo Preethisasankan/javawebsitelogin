@@ -11,7 +11,7 @@
 
   <h1>User Login</h1>
 
-  <form:form action="dologin" method="post" modelAttribute="user">
+  <form:form action="adminloginsubmit" method="post" modelAttribute="user">
     <table>
       <tr>
         <td>Email</td>

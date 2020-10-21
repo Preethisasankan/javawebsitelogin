@@ -1,4 +1,4 @@
-package javaprojectgit.services;
+package javaprojectgit.exception;
 
 public class UserValidationException extends Exception {
 

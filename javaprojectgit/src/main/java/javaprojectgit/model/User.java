@@ -8,6 +8,7 @@ public class User {
 	public String password;
 	public String name;
 	public Integer roleId;
+	public boolean active;
 
 	public String getName() {
 		return name;
@@ -38,5 +39,11 @@ public class User {
 	}
 	public void setRoleId(Integer roleId) {
 		this.roleId = roleId;
+	}
+	public boolean isActive() {
+		return active;
+	}
+	public void setActive(boolean active) {
+		this.active = active;
 	}
 }
