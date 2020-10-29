@@ -14,23 +14,27 @@ import javaprojectgit.exception.UserValidationException;
 import javaprojectgit.model.User;
 
 public class UserService {
+	
 	@Autowired
 	private JdbcTemplate template;
 	private Pattern pattern;
     private Matcher matcher;
+    private static final Integer ADMIN_ROLE_ID = 1;
 	
-	public Boolean validation(User user) throws UserValidationException {
+	public boolean validation(User user) throws UserValidationException {
 		 final String EMAIL_PATTERN  = "^[_A-Za-z0-9-+]+(.[_A-Za-z0-9-]+)*@" + "[A-Za-z0-9-]+(.[A-Za-z0-9]+)*(.[A-Za-z]{2,})$";
 		 if(StringUtils.isBlank(user.getUsername())||StringUtils.isBlank(user.getPassword())){
 			 throw new UserValidationException("Please enter username& password");
 		 }
 		 pattern = Pattern.compile(EMAIL_PATTERN);
 	     matcher = pattern.matcher(user.getUsername());
-	     boolean b=matcher.matches();
-	     if(!b) {
+	    
+	     if(matcher.matches()) {
+	    	 return true;
+	     }else {
 	    	 throw new UserValidationException("Please enter username in email format");
 	     }
-		return (user.getUsername() != "" && user.getPassword() != "" && matcher.matches());
+		
 	}
 	
 	public User authorize(User user) throws UserValidationException,SQLException{
@@ -38,12 +42,9 @@ public class UserService {
 		List<User> users=template.query(sql, 
 				new UserMapper());
 		
-		if(users.size()>0){
-			if(users.get(0).isActive()) {
-				return users.get(0);
-			}else {
-				throw new UserValidationException("Your account is deactivated.Please contact admin");
-			}
+		if(users.size()>0 && isActive(users.get(0))){
+			users.get(0).setRoleId(user.getRoleId());
+			return users.get(0);
 		}else {
 			throw new UserValidationException("Username or password is incorrect");
 		}
@@ -67,4 +68,21 @@ public class UserService {
 		}
 		
 	}
+	public boolean isActive(User user) throws UserValidationException {
+		if(user.isActive()) {
+			return true;
+		}else {
+			throw new UserValidationException("Your account is deactivated.Please contact admin");
+		}
+	}
+	public boolean isAdmin(User user)  {
+		if(user.getRoleId()== ADMIN_ROLE_ID) {
+			return true;
+		}
+			return false;
+		
+	}
+
+	
+	
 }

@@ -9,7 +9,7 @@ public class User {
 	public String name;
 	public Integer roleId;
 	public boolean active;
-
+	
 	public String getName() {
 		return name;
 	}
@@ -46,4 +46,7 @@ public class User {
 	public void setActive(boolean active) {
 		this.active = active;
 	}
+
+	
+	
 }

@@ -8,21 +8,10 @@
 <title>Login</title>
 </head>
 <body>
-<div class="container">
-  <h1>User Detail</h1>
-	<br />
-	<a href="/javaprojectgit/user/">Back</a>
-		<p><label>ID:</label>
-		<span>${user.id}</span></p>
-	
-		<p><label>Username:</label>
-		<span>${user.username}</span></p>
-		<p><label>Name:</label>
-		<span>${user.name}</span></p>
-		
-</div>
 
-  <!--<form:form action="adminloginsubmit" method="post" modelAttribute="user">
+  <h1>User Login</h1>
+
+  <form:form action="dologin" method="post" modelAttribute="user">
     <table>
       <tr>
         <td>Email</td>
@@ -36,7 +25,7 @@
         <td><button type="submit">Login</button></td>
       </tr>
     </table>
-  </form:form>-->
+  </form:form>
 
   <span style="color: red;">${message}</span>
 </body>
