@@ -7,6 +7,9 @@
 <title>Profile</title>
 </head>
 <body>
+
 Welcome ${Name}
+<jsp:include page="header.jsp"></jsp:include> 
+<a href="../logout">Logout</a>
 </body>
 </html>

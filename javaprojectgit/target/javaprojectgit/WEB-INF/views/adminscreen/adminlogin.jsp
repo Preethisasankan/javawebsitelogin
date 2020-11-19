@@ -8,10 +8,10 @@
 <title>Login</title>
 </head>
 <body>
-
+<jsp:include page="../header.jsp"></jsp:include> 
   <h1>User Login</h1>
 
-  <form:form action="adminloginsubmit" method="post" modelAttribute="user">
+  <form:form action="adminloginsubmit" method="post" modelAttribute="currentUser">
     <table>
       <tr>
         <td>Email</td>

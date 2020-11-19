@@ -34,7 +34,7 @@ public class ProductService {
 			template.update(sql, product.getName(), product.getSku(),product.getPrice(), product.getDescription(),product.getCategory(), product.getStock(), product.isStatus(),product.getImage(),product.getId());	
 		}else {
 		 sql = "INSERT INTO products (name, sku, price, description,category,stock,image)"
-                + " VALUES (?, ?, ?, ?,?,?)";
+                + " VALUES (?, ?, ?, ?,?,?,?)";
 		 template.update(sql, product.getName(), product.getSku(),product.getPrice(), product.getDescription(),product.getCategory(), product.getStock(),product.getImage());
 		}
 		

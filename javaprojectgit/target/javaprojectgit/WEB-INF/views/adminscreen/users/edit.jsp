@@ -8,6 +8,7 @@
 <title>Login</title>
 </head>
 <body>
+<jsp:include page="../header.jsp"></jsp:include> 
 <div class="container">
   <h1>User Detail</h1>
 	<br />

@@ -7,11 +7,7 @@
 <title>Dashboard</title>
 </head>
 <body>
-Welcome Admin,
-<nav>
-<ul>
-<li><a href="../user/">User</a></li>
-</ul>
-</nav>
+<jsp:include page="header.jsp"></jsp:include>  
+
 </body>
 </html>

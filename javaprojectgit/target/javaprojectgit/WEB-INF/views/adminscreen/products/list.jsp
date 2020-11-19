@@ -11,27 +11,28 @@
 <body>
 <jsp:include page="../header.jsp"></jsp:include>  
 <div align="center">
-    <h2>User Manager</h2>
+    <h2>Product Manager</h2>
     
    
     <table border="1" cellpadding="5">
         <tr>
             <th>ID</th>
-            <th>UserName</th>
-            <th>Action</th>
+            <th>Name</th>
+         	<th>SKU</th>
+         	<th>Price</th>
+         	<th>Stock</th>
+         	<th>Status</th>
         </tr>
-        <c:forEach items="${listCustomer}" var="customer">
+        <c:forEach items="${listProducts}" var="product">
         <tr>
-            <td>${customer.id}</td>
-            <td>${customer.username}</td>
+            <td>${product.id}</td>
+            <td>${product.name}</td>
+             <td>${product.sku}</td>
+              <td>${product.price}</td>
+              <td>${product.stock}</td>
+              <td>${product.status}</td>
             <td>
-            <a href="${customer.id}" > Show</a>
-            <c:if test="${customer.active}">
-            <a href="update/${customer.id}" > Deactivate</a>
-            </c:if>
-            <c:if test="${customer.active ==false}">
-            <a href="update/${customer.id}" > Activate</a>
-            </c:if>
+            <a href="${product.id}" > Show</a>
         </tr>
         </c:forEach>
     </table>

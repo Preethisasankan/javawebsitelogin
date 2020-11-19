@@ -1,15 +1,19 @@
 package javaprojectgit.controller;
 
+import java.util.LinkedHashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+
 import org.springframework.web.bind.annotation.SessionAttribute;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 
 import javaprojectgit.model.ProductCategory;
@@ -20,22 +24,32 @@ import javaprojectgit.services.UserService;
 
 @Controller
 @RequestMapping(value="/product")
-
 public class ProductController {
 	@Autowired
 	ProductService productService;
 	@Autowired
 	UserService userService;
+	public static final String REST_SERVICE_URI = "http://localhost:8080/javaprojectgit/api/";
 	/**
 	 * To list the products in Admin side
 	 * @param model
 	 * @param currentUser
 	 * @return
 	 */
+//	@GetMapping("/list")
+//	@SuppressWarnings("unchecked")
+//	public ModelAndView listProducts(Model model) {
+//        RestTemplate restTemplate = new RestTemplate();
+//        List<LinkedHashMap<String, Object>> usersMap = restTemplate.getForObject(REST_SERVICE_URI+"/productlist", List.class);
+//         
+//        return new ModelAndView("/adminscreen/products/list");
+//	}
 	@GetMapping("/list")
+	@SuppressWarnings("unchecked")
 	public ModelAndView listProducts(Model model,  @SessionAttribute("currentUser") User currentUser ) {
 		if(userService.isAdmin(currentUser)) {
-		List<Products> listProducts=productService.findAllproducts();
+			RestTemplate restTemplate = new RestTemplate();
+		List<Products> listProducts=restTemplate.getForObject(REST_SERVICE_URI+"/productlist", List.class);
 		 model.addAttribute("listProducts",listProducts);
 		 return new ModelAndView("/adminscreen/products/list");
 		}

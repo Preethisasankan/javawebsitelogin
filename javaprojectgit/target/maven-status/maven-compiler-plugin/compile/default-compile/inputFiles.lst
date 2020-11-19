@@ -1,8 +1,14 @@
 E:\Projects\javaproject\javawebsitelogin\javaprojectgit\src\main\java\javaprojectgit\controller\LoginController.java
-E:\Projects\javaproject\javawebsitelogin\javaprojectgit\src\main\java\javaprojectgit\services\RoleMapper.java
 E:\Projects\javaproject\javawebsitelogin\javaprojectgit\src\main\java\javaprojectgit\services\UserMapper.java
 E:\Projects\javaproject\javawebsitelogin\javaprojectgit\src\main\java\javaprojectgit\exception\UserValidationException.java
 E:\Projects\javaproject\javawebsitelogin\javaprojectgit\src\main\java\javaprojectgit\controller\UserController.java
-E:\Projects\javaproject\javawebsitelogin\javaprojectgit\src\main\java\javaprojectgit\services\UserService.java
 E:\Projects\javaproject\javawebsitelogin\javaprojectgit\src\main\java\javaprojectgit\model\User.java
+E:\Projects\javaproject\javawebsitelogin\javaprojectgit\src\main\java\javaprojectgit\model\ProductCategory.java
+E:\Projects\javaproject\javawebsitelogin\javaprojectgit\src\main\java\javaprojectgit\model\Products.java
 E:\Projects\javaproject\javawebsitelogin\javaprojectgit\src\main\java\javaprojectgit\model\Role.java
+E:\Projects\javaproject\javawebsitelogin\javaprojectgit\src\main\java\javaprojectgit\controller\ProductController.java
+E:\Projects\javaproject\javawebsitelogin\javaprojectgit\src\main\java\javaprojectgit\services\RoleMapper.java
+E:\Projects\javaproject\javawebsitelogin\javaprojectgit\src\main\java\javaprojectgit\controller\RestApiController.java
+E:\Projects\javaproject\javawebsitelogin\javaprojectgit\src\main\java\javaprojectgit\services\UserService.java
+E:\Projects\javaproject\javawebsitelogin\javaprojectgit\src\main\java\javaprojectgit\services\ProductService.java
+E:\Projects\javaproject\javawebsitelogin\javaprojectgit\src\main\java\javaprojectgit\services\ProductMapper.java

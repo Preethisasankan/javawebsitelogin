@@ -49,7 +49,7 @@ public class UserController {
 		}
 	 
 	 @RequestMapping(value = "/", method = RequestMethod.GET)
-	 public ModelAndView ListUser(Model  model,@SessionAttribute("currentUser") User currentUser) {
+	 public ModelAndView ListUser(Model  model, @SessionAttribute("currentUser") User currentUser) {
 		 if(userService.isAdmin(currentUser)) {
 		 List<User> listCustomer=userService.getUser();
 		 model.addAttribute("listCustomer",listCustomer);
